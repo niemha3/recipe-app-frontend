@@ -8,7 +8,7 @@ const App = () => {
   const [recipes, setRecipes] = useState(null)
 
   const getRecipes = async () => {
-    const response = await recipesService.getAll()
+    const response = await recipesService.getRecipes()
     setRecipes(response)
 
   }
