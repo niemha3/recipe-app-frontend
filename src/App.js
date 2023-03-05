@@ -1,4 +1,5 @@
 import { useState } from "react"
+import Navbar from './components/Navbar'
 import RecipeCard from "./components/RecipeCard"
 import recipesService from './services/recipes'
 
@@ -16,6 +17,7 @@ const App = () => {
 
   return (
     <div>
+      <Navbar />
       <h1> Reseptejä</h1>
       <button onClick={getRecipes}>Get recipes</button>
       {recipes &&
