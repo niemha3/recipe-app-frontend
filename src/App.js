@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Navbar from './components/Navbar'
+import Searchbar from "./components/Searchbar"
 import Home from './views/Home'
 import Breakfast from './views/Breakfast'
 import Lunch from './views/Lunch'
@@ -14,6 +15,7 @@ const App = () => {
   return (
     <div>
       <Navbar />
+      <Searchbar />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
