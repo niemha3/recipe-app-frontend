@@ -2,12 +2,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Navbar from './components/Navbar'
 import Searchbar from "./components/Searchbar"
 import Home from './views/Home'
-import Breakfast from './views/Breakfast'
-import Lunch from './views/Lunch'
-import Dinner from './views/Dinner'
-import Snack from './views/Snack'
-import Dessert from './views/Dessert'
-import Login from './views/Login'
+// import Breakfast from './views/Breakfast'
+// import Lunch from './views/Lunch'
+// import Dinner from './views/Dinner'
+// import Snack from './views/Snack'
+// import Dessert from './views/Dessert'
+// import Login from './views/Login'
 
 
 const App = () => {
