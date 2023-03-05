@@ -18,16 +18,8 @@ const App = () => {
   return (
     <div>
       <Navbar />
-      <h1> Reseptejä</h1>
-      <button onClick={getRecipes}>Get recipes</button>
-      {recipes &&
-        <ul>
-          {recipes.map(recipe =>
-            <RecipeCard key={recipe.id} recipe={recipe} />
-          )}
+      <RecipeCard />
 
-        </ul>
-      }
     </div>
   )
 }
