@@ -14,7 +14,7 @@ const NavbarStyles = {
     },
 
     logoText: {
-        mr: 2,
+
         display: { xs: 'none', md: 'flex' },
         fontFamily: 'monospace',
         fontWeight: 700,
@@ -36,6 +36,7 @@ const NavbarStyles = {
     },
 
     loginButton: {
+        fontSize: { xs: 15, sm: 20, },
         flexGrow: 0,
         mr: 2,
         display: { xs: 'flex' },

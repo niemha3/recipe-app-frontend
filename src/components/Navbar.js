@@ -85,7 +85,6 @@ const Navbar = () => {
 
                     <Box sx={{ flexGrow: 0 }}>
                         <Typography
-                            variant="h6"
                             noWrap
                             component="a"
                             href=""
