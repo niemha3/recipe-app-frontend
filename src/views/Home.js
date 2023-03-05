@@ -24,9 +24,8 @@ const Home = () => {
     console.log(recipes)
 
     return (
-
-        <Paper sx={{ my: 3 }}>
-            <Typography variant="h5">
+        <Paper sx={{ my: 3, py: 3, backgroundColor: '#FAF8FF' }}>
+            <Typography variant="h5" sx={{ ml: 3, }}>
                 Have you tried out these?
             </Typography>
 
@@ -40,7 +39,6 @@ const Home = () => {
                 </Grid>
             }
         </Paper >
-
     )
 }
 export default Home
