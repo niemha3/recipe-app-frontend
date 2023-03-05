@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Navbar from './components/Navbar'
 import Searchbar from "./components/Searchbar"
 import Home from './views/Home'
@@ -16,17 +16,18 @@ const App = () => {
     <div>
       <Navbar />
       <Searchbar />
-
-      <Routes>
-        <Route path="/" element={<Home />} />
-        {/* <Route path="/breakfast" element={<Breakfast />} />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          {/* <Route path="/breakfast" element={<Breakfast />} />
           <Route path="/lunch" element={<Lunch />} />
           <Route path="/dinner" element={<Dinner />} />
           <Route path="/snack" element={<Snack />} />
           <Route path="/dessert" element={<Dessert />} />
           <Route path="/login" element={<Login />} /> */}
-      </Routes>
+        </Routes>
 
+      </BrowserRouter>
 
     </div>
   )
