@@ -9,13 +9,13 @@ import RestoreIcon from '@mui/icons-material/Restore';
 const RecipeCard = ({ recipe }) => {
     return (
 
-        <Card sx={{ my: 2, maxWidth: 345, display: 'flex', flexDirection: 'column' }}>
+        <Card sx={{ m: 2, maxWidth: 345, display: 'flex', flexDirection: 'column' }}>
             <CardMedia
                 component="img"
                 height="194"
                 image="./chicken_pasta.png"
                 alt="Chicken pasta dish"
-                justifyContent="center"
+
             >
             </CardMedia>
 
@@ -24,7 +24,7 @@ const RecipeCard = ({ recipe }) => {
             </Typography>
 
             <Typography variant="h6" sx={{ fontWeight: 'bold', mt: 1 }}>
-                Creamy Chicken Pasta
+                {recipe.name}
             </Typography>
 
             <Box sx={{ my: 1 }}>
