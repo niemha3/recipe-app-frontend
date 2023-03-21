@@ -49,4 +49,10 @@ const NavbarStyles = {
 
 }
 
+export const recipeInfoBoxStyles = {
+    topics: {
+        fontWeight: 'bold'
+    }
+}
+
 export default NavbarStyles 
