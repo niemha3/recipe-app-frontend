@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom"
 import Card from '@mui/material/Card'
 import Box from '@mui/material/Box'
 import CardMedia from '@mui/material/CardMedia'
@@ -6,10 +7,15 @@ import RestoreIcon from '@mui/icons-material/Restore';
 
 
 
+
 const RecipeCard = ({ recipe }) => {
+
+    const navigate = useNavigate()
+    
     return (
 
-        <Card sx={{ m: 2, maxWidth: 345, display: 'flex', flexDirection: 'column' }}>
+        
+        <Card sx={{p:1, m: 2, maxWidth: 345, display: 'flex', flexDirection: 'column', ':hover': { boxShadow: 20, borderColor: 'neutral.outlinedHoverBorder', cursor:'pointer'}} } onClick={() => navigate(`/recipes/${recipe.id}`)}>
             <CardMedia
                 component="img"
                 height="194"
