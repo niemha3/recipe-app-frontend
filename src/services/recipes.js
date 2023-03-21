@@ -8,7 +8,12 @@ const getRecipes = async () => {
     return response.data
 }
 
+const getRecipe = async (recipeId) => {
+    const request = axios.get(`${baseUrl}/${recipeId}`)
+    const response = await request
+    return response.data
+}
 
 
 
-export default { getRecipes }
+export default { getRecipes, getRecipe }
