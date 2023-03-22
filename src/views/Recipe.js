@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import recipesService from '../services/recipes'
-import {Paper, Typography, Grid } from '@mui/material'
+import { Grid } from '@mui/material'
 import RecipeInfo from "../components/RecipeInfo"
+import RecipeIngredients from "../components/RecipeIngredients"
+import RecipeInstruction from "../components/RecipeInstruction"
 
 const Recipe = () => {
     
@@ -22,15 +24,25 @@ const Recipe = () => {
     return (
         <>
             {recipe &&
-            <Grid container sx={{display:'flex', flexDirection:'row', justifyContent:'center'}}>
+            // <Grid container sx={{display:'flex', flexDirection:'row', justifyContent:'center'}}>
 
-                <Grid container sx={{display:'flex', flexDirection:'column', justifyContent:'center',  alignItems:{xs:'center', md:'start' } }}>
-                    <Grid item>
-                        <img alt="chicken pasta" src="../chicken_pasta.png" width="400" height="300"  />
+                <Grid container sx={{display:'flex', flexDirection: {xs:'column', sm:'row'}, justifyContent:'center',  alignItems:{xs:'center', sm:'start' },  }}>
+                    <Grid item xs={12} sm={6}>
+                        <img alt="chicken pasta" src="../chicken_pasta.png" style={{maxWidth: '100%', height:'auto'}}  />
                     </Grid>
-                </Grid>
                 
+                
+                <Grid item xs={12} sm={6}> 
                 <RecipeInfo recipe={recipe} />
+                </Grid>
+
+                <Grid item xs={12}>
+                <RecipeIngredients ingredients={recipe.ingredients} />
+                </Grid>
+
+                <Grid item xs={12}>
+                <RecipeInstruction instructions={recipe.instructions} />
+                </Grid>
 {/*               
                 <Grid container sx={{display:'flex', flexDirection:'row', justifyContent:'center',  alignItems:{md:'end' } }}>
 
@@ -76,7 +88,7 @@ const Recipe = () => {
 
 
                
-            </Grid>
+                </Grid>
             }
              </>
     )
