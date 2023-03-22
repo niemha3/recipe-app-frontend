@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { Paper, Typography, Grid } from '@mui/material'
 import RecipeCard from '../components/RecipeCard'
 import recipesService from '../services/recipes'
+import Searchbar from '../components/Searchbar'
 
 
 
@@ -24,6 +25,8 @@ const Home = () => {
     console.log(recipes)
 
     return (
+        <> 
+        <Searchbar />
         <Paper sx={{ my: 3, py: 3, backgroundColor: '#FAF8FF' }}>
             <Typography variant="h5" sx={{ ml: 3, }}>
                 Have you tried out these?
@@ -38,7 +41,8 @@ const Home = () => {
                     ))}
                 </Grid>
             }
-        </Paper >
+        </Paper>
+        </>
     )
 }
 export default Home
