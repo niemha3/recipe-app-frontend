@@ -14,6 +14,11 @@ const getRecipe = async (recipeId) => {
     return response.data
 }
 
+const createNewRecipe = async (newRecipe) => {
 
 
-export default { getRecipes, getRecipe }
+}
+
+
+
+export default { getRecipes, getRecipe, createNewRecipe }

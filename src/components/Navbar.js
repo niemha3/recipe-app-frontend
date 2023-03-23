@@ -12,7 +12,7 @@ import Button from '@mui/material/Button'
 import MenuItem from '@mui/material/MenuItem'
 
 const Navbar = () => {
-    const pages = ['Breakfast', 'Lunch', 'Dinner', 'Snack', 'Dessert']
+    const pages = ['Breakfast', 'Lunch', 'Dinner', 'Snack', 'Create new recipe']
 
     const [anchorElNav, setAnchorElNav] = useState(null)
 
