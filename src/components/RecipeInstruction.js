@@ -1,18 +1,19 @@
-import { Paper, Grid, Typography } from '@mui/material'
+import { Paper, Grid, Typography, Divider } from '@mui/material'
 
 const RecipeInstruction = ( {instructions} ) => (
 
-    <Paper sx={{ m:1, p:2, backgroundColor: '#FAF8FF' }}>
-        <Grid container sx={{display:'flex', flexDirection:'column', mt:2, width:'90%'}}>
-            <Typography sx={{fontWeight:'bold'}}>Instructions</Typography>
+    // <Paper sx={{ m:1, p:2, backgroundColor: '#FAF8FF' }}>
+        <Grid container sx={{display:'flex', flexDirection:'column', my:4, width:'90%'}}>
+            <Typography variant="h5" sx={{fontWeight:'bold', mb:1}}>Instructions</Typography>
      
                 {instructions.map(instruction => (
-                <Grid item sx={{p:1}}>
+                <Grid key={instruction} item sx={{p:1}}>
                     <Typography key={instruction}>{instruction}</Typography>
+                    <Divider />
                 </Grid>
                 ))}
         </Grid>
-    </Paper>   
+    // </Paper>   
   
 )
 
