@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Navbar from './components/Navbar'
-import Searchbar from "./components/Searchbar"
 import Home from './views/Home'
+import Recipe from './views/Recipe'
 // import Breakfast from './views/Breakfast'
 // import Lunch from './views/Lunch'
 // import Dinner from './views/Dinner'
@@ -16,10 +16,10 @@ const App = () => {
   return (
     <div>
       <Navbar />
-      <Searchbar />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/recipes/:id" element={<Recipe />} />
           {/* <Route path="/breakfast" element={<Breakfast />} />
           <Route path="/lunch" element={<Lunch />} />
           <Route path="/dinner" element={<Dinner />} />
