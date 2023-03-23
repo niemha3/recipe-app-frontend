@@ -26,22 +26,21 @@ const Home = () => {
 
     return (
         <> 
-        <Searchbar />
-        <Paper sx={{ my: 3, py: 3, backgroundColor: '#FAF8FF' }}>
-            <Typography variant="h5" sx={{ ml: 3, }}>
-                Have you tried out these?
-            </Typography>
+            <Paper sx={{ my: 3, py: 3, backgroundColor: '#FAF8FF' }}>
+                <Typography variant="h5" sx={{fontWeight:'bold', ml: {xs: 0, md:3}, textAlign: { xs:'center', md: 'start'} }}>
+                    Have you tried out these?
+                </Typography>
 
-            {recipes &&
-                < Grid container>
-                    {recipes.map((recipe) => (
-                        <Grid item key={recipe.id}>
-                            <RecipeCard recipe={recipe} />
-                        </Grid>
-                    ))}
-                </Grid>
-            }
-        </Paper>
+                {recipes &&
+                    < Grid container sx={{display:'flex', justifyContent:'center'}}>
+                        {recipes.map((recipe) => (
+                            <Grid item key={recipe.id}>
+                                <RecipeCard recipe={recipe} />
+                            </Grid>
+                        ))}
+                    </Grid>
+                }
+            </Paper>
         </>
     )
 }
