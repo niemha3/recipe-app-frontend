@@ -2,8 +2,8 @@ import {Paper, Typography, Grid, Divider } from '@mui/material'
 
 const RecipeInfo = ({ recipe }) => (
 
-    <Paper sx={{ m:1, p:2, backgroundColor: '#FAF8FF' }}>
-        <Grid container sx={{display:'flex', flexDirection:'row', justifyContent:'center',  alignItems:{ md:'end' }, mb:2 }}>
+    <> 
+        <Grid container sx={{display:'flex', flexDirection:'row', justifyContent:'center',  alignItems:{ md:'end' }, my:2, p:2 }}>
 
             <Grid item xs={12}>
             <Typography variant="h4">{recipe.name}</Typography>
@@ -20,7 +20,7 @@ const RecipeInfo = ({ recipe }) => (
             </Grid>
         </Grid>
             <Divider />
-            <Grid container sx={{display:'flex', flexDirection:'row', justifyContent:'center',  alignItems:{ md:'end' } }}>
+            <Grid container sx={{display:'flex', flexDirection:'row', justifyContent:'center',  alignItems:{ md:'end' }, p:2 }}>
             <Grid item xs={5} sx={{mt:2}}>
                 <Typography sx={{fontWeight:'bold'}}> Protein: </Typography>
                 <Typography>{recipe.protein}g</Typography>
@@ -36,9 +36,10 @@ const RecipeInfo = ({ recipe }) => (
                 <Typography>{recipe.fat}g</Typography>
             </Grid>
         </Grid>
+        </>
         
       
-    </Paper>
+   
 )
 
 export default RecipeInfo
