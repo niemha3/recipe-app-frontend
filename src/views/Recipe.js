@@ -11,7 +11,6 @@ const Recipe = () => {
     const { id } = useParams()
     const [recipe, setRecipe] = useState(null)
     const [showIngredients, setShowIngredients] = useState(true)
-    const [suggestRecipes, setSuggestRecipes] = useState(null)
 
     useEffect(() => {
         const doActions = async () => {
@@ -29,8 +28,6 @@ const Recipe = () => {
     const showInstructionsHandler = () => {
         setShowIngredients(false)
     }
-
-   
     
     return (
         <>
@@ -40,28 +37,33 @@ const Recipe = () => {
                         <img alt="chicken pasta" src="../chicken_pasta.png" style={{maxWidth: '100%', height:'auto'}}  />
                     </Grid>
                 
-                
                     <Grid item xs={12}> 
                     <RecipeInfo recipe={recipe} />
                     </Grid>
 
-                    
-                    <Box sx={{mt:8}}>
-                        <Button style={{borderBottom: showIngredients ? '2px solid black': 'none'}} sx={{mr:7, color:'black', fontWeight:'bold', borderRadius:0, fontSize:'1.5em' }} onClick={showIngredientsHandler}>Ingredients</Button>
-                        <Button style={{borderBottom: !showIngredients ? '2px solid black': 'none'}} sx={{color:'black', fontWeight:'bold', borderRadius:0, fontSize:'1.5em' }} onClick={showInstructionsHandler}>Instructions</Button>
+                    <Box sx={{mt:8, display:{xs:'flex', md:'none'}}}>
+                        <Button style={{borderBottom: showIngredients ? '2px solid black': 'none'}} sx={{mr:7, color:'black', fontWeight:'bold', borderRadius:0, fontSize: {xs:'0.8em', sm:'1.5rem' }}} onClick={showIngredientsHandler}>Ingredients</Button>
+                        <Button style={{borderBottom: !showIngredients ? '2px solid black': 'none'}} sx={{color:'black', fontWeight:'bold', borderRadius:0, fontSize: {xs:'0.8em', sm:'1.5rem' }}} onClick={showInstructionsHandler}>Instructions</Button>
                     </Box>
                     
-                    {/* {/* <Grid item xs={12} md={6}>
-                    <RecipeIngredients ingredients={recipe.ingredients} />
-                    </Grid> */}
+                   
 
-                    <Grid item xs={12}>
+                    <Grid item xs={12} sx={{display: {xs:'block', md:'none'}, my:8}}>
                         {showIngredients ?
                     <RecipeIngredients ingredients={recipe.ingredients} />
                     : <RecipeInstruction instructions={recipe.instructions} />
-                    
                         }
-                    </Grid> 
+                         </Grid> 
+                        
+                        <Grid container sx={{display:'flex', justifyContent:'center', alignItems:'start', backgroundColor:'#FAF8FF', my:4, py:4, gap:10 }}> 
+                            <Grid item lg={6} sx={{display: {xs:'none', md:'flex'}}}>
+                                <RecipeIngredients ingredients={recipe.ingredients} />
+                            </Grid>
+
+                            <Grid item lg={6} sx={{display: {xs:'none', md:'flex'}}}>
+                                <RecipeInstruction instructions={recipe.instructions} />
+                            </Grid>
+                        </Grid>
                 </Grid>
             }
              </>
