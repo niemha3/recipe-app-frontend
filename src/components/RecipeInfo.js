@@ -3,7 +3,7 @@ import {Typography, Grid, Divider } from '@mui/material'
 const RecipeInfo = ({ recipe }) => (
 
     <> 
-        <Grid container sx={{display:'flex', flexDirection:'row', justifyContent:'center',  alignItems:{ md:'end' }, my:2, p:2 }}>
+        <Grid container sx={{display:'flex', flexDirection:'row', justifyContent:'center',  alignItems:{ md:'end' }, my:3, p:2 }}>
 
             <Grid item xs={12}>
             <Typography variant="h4">{recipe.name}</Typography>
