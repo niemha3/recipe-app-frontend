@@ -15,7 +15,9 @@ const getRecipe = async (recipeId) => {
 }
 
 const createNewRecipe = async (newRecipe) => {
-
+    const request = axios.post(baseUrl, newRecipe)
+    const response = await request
+    return response
 
 }
 
