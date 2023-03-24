@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import Card from '@mui/material/Card'
 import Grid from '@mui/material/Grid'
+import Box from '@mui/material/Box'
 import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
 import RestoreIcon from '@mui/icons-material/Restore';
@@ -13,37 +14,33 @@ const RecipeCard = ({ recipe }) => {
     const navigate = useNavigate()
     
     return (
+        <> 
+            {recipe &&
+                <Card sx={{m:2, borderRadius:'15px', maxWidth: '100%', height:'auto', display: 'flex', flexDirection: 'column', ':hover': { transform:'scale(1.1)', boxShadow: 20, borderColor: 'neutral.outlinedHoverBorder', cursor:'pointer'}} } onClick={() => navigate(`/recipes/${recipe.id}`)}>
+                    <CardMedia
+                        component="img"
+                        height="auto"
+                        image="./chicken_pasta.png"
+                        alt="Chicken pasta dish"
 
-        
-        <Card sx={{p:1, m: 2, maxWidth: 345, height:'auto', display: 'flex', flexDirection: 'column', ':hover': { transform:'scale(1.1)', boxShadow: 20, borderColor: 'neutral.outlinedHoverBorder', cursor:'pointer'}} } onClick={() => navigate(`/recipes/${recipe.id}`)}>
-            <CardMedia
-                component="img"
-                height="194"
-                image="./chicken_pasta.png"
-                alt="Chicken pasta dish"
+                    >
+                    </CardMedia>
 
-            >
-            </CardMedia>
+                
 
-        
-
-            <Typography variant="h6" sx={{ fontWeight: 'bold', mt: 1 }}>
-                {recipe.name}
-            </Typography>
-
-            <Grid container sx={{ my: 1, display:'flex', flexDirection:'row', justifyContent:'space-between', alignItems:'end' }}>
-                <Grid item xs={9}> 
-                    <RestoreIcon />
-                    <Typography variant="p"> 45min</Typography>
-                </Grid>
-                <Grid item xs={3}>
-                    <Typography variant="p">
-                    Lunch
+                    <Typography variant="h6" sx={{ fontWeight: 'bold', mt: 1, ml:2 }}>
+                        {recipe.name}
                     </Typography>
-                </Grid>
-            </Grid>
+                    
+                    <Box sx={{display:'flex', ml:2, mb:1}}>
+                        <RestoreIcon />
+                        <Typography sx={{ml:1}}>{recipe.cookingTimeInMinutes}min</Typography>
+                        <Typography sx={{ml:1}}>{recipe.meal}</Typography>
+                    </Box>
 
-        </Card>
+                </Card>
+            }
+        </>
 
     )
 }
