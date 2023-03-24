@@ -1,61 +1,79 @@
 import {Box, Paper, Typography, TextField, Button} from '@mui/material'
 import { useState } from 'react'
+import RecipesService from '../services/recipes'
 
 const CreateRecipe = () => {
 
-    const [name, setName] = useState('')
-    const [ingredients, setIngredients] = useState([])
-    const [instructions, setInstructions] = useState([])
-    const [calories, setCalories] = useState('')
-    const [mainIngredient, setMainIngredient] = useState('')
-    const [cookingTime, setCookingTime] = useState('')
-    const [protein, setProtein] = useState('')
-    const [carbohydratess, setCarbohydrates] = useState('')
-    const [fat, setFat] = useState('')
+    const [recipeName, setRecipeName] = useState('')
+    const [recipeIngredients, setRecipeIngredients] = useState([])
+    const [recipeInstructions, setRecipeInstructions] = useState([])
+    const [recipeCalories, setRecipeCalories] = useState('')
+    const [recipeMainIngredient, setRecipeMainIngredient] = useState('')
+    const [recipeCookingTime, setRecipeCookingTime] = useState('')
+    const [recipeProtein, setRecipeProtein] = useState('')
+    const [recipeCarbohydrates, setRecipeCarbohydrates] = useState('')
+    const [recipeFat, setRecipeFat] = useState('')
 
     const handleNameOnChange = (event) => {
-        setName(event.target.value)
+        setRecipeName(event.target.value)
         
     }
 
     const handleIngredientsOnChange = (event) => {
-        setIngredients(event.target.value)
+        setRecipeIngredients(event.target.value)
         
     }
 
     const handleInstructionsOnChange = (event) => {
-        setInstructions(event.target.value)
+        setRecipeInstructions(event.target.value)
         
     }
 
     const handleCaloriesOnChange = (event) => {
-        setCalories(event.target.value)
+        setRecipeCalories(event.target.value)
         
     }
 
     const handleMainIngredientOnChange = (event) => {
-        setMainIngredient(event.target.value)
+        setRecipeMainIngredient(event.target.value)
         
     }
 
     const handleCookingTimeOnChange = (event) => {
-        setCookingTime(event.target.value)
+        setRecipeCookingTime(event.target.value)
         
     }
 
     const handleProteinOnChange = (event) => {
-        setProtein(event.target.value)
+        setRecipeProtein(event.target.value)
         
     }
 
     const handleCarbohydratesOnChange = (event) => {
-        setCarbohydrates(event.target.value)
+        setRecipeCarbohydrates(event.target.value)
         
     }
 
     const handleFatOnChange = (event) => {
-        setFat(event.target.value)
+        setRecipeFat(event.target.value)
         
+    }
+
+    const submitNewRecipe = async () => {
+        
+        const newRecipe = {
+            name: recipeName,
+            ingredients: recipeIngredients,
+            instructions: recipeInstructions,
+            calories: recipeCalories,
+            mainIngredient: recipeMainIngredient,
+            cookingTimeInMinutes: recipeCookingTime,
+            protein: recipeProtein,
+            carbohydrates: recipeCarbohydrates,
+            fat: recipeFat
+        }
+
+        await RecipesService.createNewRecipe(newRecipe)
     }
 
 
@@ -92,7 +110,7 @@ return (
             <TextField variant="outlined" label="Fat" fullWidth size="small" margin="normal" onChange={handleFatOnChange}  />
             </Box>
 
-            <Button sx={{mt:2}} disabled={!name || !ingredients || !instructions} variant="outlined">Submit</Button>
+            <Button sx={{mt:2}} disabled={!recipeName || !recipeIngredients || !recipeInstructions} variant="outlined" onClick={submitNewRecipe}>Submit</Button>
         </Box>
 
   
