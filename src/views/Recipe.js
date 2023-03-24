@@ -33,11 +33,11 @@ const Recipe = () => {
         <>
             {recipe &&
                 <Grid container sx={{display:'flex', flexDirection: {xs:'column', sm:'row'}, justifyContent:'center',  alignItems:{xs:'center', sm:'start' },  }}>
-                    <Grid item xs={12}>
-                        <img alt="chicken pasta" src="../chicken_pasta.png" style={{maxWidth: '100%', height:'auto'}}  />
+                    <Grid item xs={12} md={6}>
+                        <img alt="chicken pasta" src="../chicken_pasta.png" style={{maxWidth: '100%', height:'400px', objectFit:'cover', objectPosition:'bottom' }}  />
                     </Grid>
                 
-                    <Grid item xs={12}> 
+                    <Grid item xs={12} md={6}> 
                     <RecipeInfo recipe={recipe} />
                     </Grid>
 
@@ -55,12 +55,12 @@ const Recipe = () => {
                         }
                          </Grid> 
                         
-                        <Grid container sx={{display:'flex', justifyContent:'center', alignItems:'start', backgroundColor:'#FAF8FF', my:4, py:4, gap:10 }}> 
-                            <Grid item lg={6} sx={{display: {xs:'none', md:'flex'}}}>
+                        <Grid container sx={{display:'flex', flexDirection:'row', justifyContent:'center', alignItems:'start', backgroundColor:'#FAF8FF', my:4, py:4, gap:5 }}> 
+                            <Grid item lg={6} sx={{display: {xs:'none', md:'flex', lg:'flex'}}}>
                                 <RecipeIngredients ingredients={recipe.ingredients} />
                             </Grid>
 
-                            <Grid item lg={6} sx={{display: {xs:'none', md:'flex'}}}>
+                            <Grid item lg={6} sx={{display: {xs:'none', md:'flex', lg:'flex'}}}>
                                 <RecipeInstruction instructions={recipe.instructions} />
                             </Grid>
                         </Grid>
