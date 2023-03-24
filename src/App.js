@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Navbar from './components/Navbar'
 import Home from './views/Home'
 import Recipe from './views/Recipe'
+import CreateRecipe from './views/CreateRecipe'
 // import Breakfast from './views/Breakfast'
 // import Lunch from './views/Lunch'
 // import Dinner from './views/Dinner'
@@ -20,6 +21,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/recipes/:id" element={<Recipe />} />
+          <Route path="recipes/create" element={<CreateRecipe />} />
           {/* <Route path="/breakfast" element={<Breakfast />} />
           <Route path="/lunch" element={<Lunch />} />
           <Route path="/dinner" element={<Dinner />} />

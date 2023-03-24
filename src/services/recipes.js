@@ -14,6 +14,13 @@ const getRecipe = async (recipeId) => {
     return response.data
 }
 
+const createNewRecipe = async (newRecipe) => {
+    const request = axios.post(baseUrl, newRecipe)
+    const response = await request
+    return response
+
+}
 
 
-export default { getRecipes, getRecipe }
+
+export default { getRecipes, getRecipe, createNewRecipe }
