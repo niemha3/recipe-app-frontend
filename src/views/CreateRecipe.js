@@ -1,5 +1,6 @@
 import {Box, Paper, Typography, TextField, Button} from '@mui/material'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import RecipesService from '../services/recipes'
 
 const CreateRecipe = () => {
@@ -7,6 +8,7 @@ const CreateRecipe = () => {
     const [recipeName, setRecipeName] = useState('')
     const [recipeIngredients, setRecipeIngredients] = useState([])
     const [recipeInstructions, setRecipeInstructions] = useState([])
+    const [recipeMeal, setRecipeMeal] = useState('')
     const [recipeCalories, setRecipeCalories] = useState('')
     const [recipeMainIngredient, setRecipeMainIngredient] = useState('')
     const [recipeCookingTime, setRecipeCookingTime] = useState('')
@@ -14,24 +16,34 @@ const CreateRecipe = () => {
     const [recipeCarbohydrates, setRecipeCarbohydrates] = useState('')
     const [recipeFat, setRecipeFat] = useState('')
 
+    const navigate = useNavigate()
+
     const handleNameOnChange = (event) => {
         setRecipeName(event.target.value)
         
     }
 
     const handleIngredientsOnChange = (event) => {
-        setRecipeIngredients(event.target.value)
+        const stringIngredients = event.target.value
+        const ingredientsArray = stringIngredients.split(',')
+        setRecipeIngredients(ingredientsArray)
         
     }
 
     const handleInstructionsOnChange = (event) => {
-        setRecipeInstructions(event.target.value)
+        const stringInstructions = event.target.value
+        const instructionsArray = stringInstructions.split(',')
+        setRecipeInstructions(instructionsArray)
         
     }
 
     const handleCaloriesOnChange = (event) => {
         setRecipeCalories(event.target.value)
         
+    }
+
+    const handleMealOnChange = (event) => {
+        setRecipeMeal(event.target.value)
     }
 
     const handleMainIngredientOnChange = (event) => {
@@ -65,6 +77,7 @@ const CreateRecipe = () => {
             name: recipeName,
             ingredients: recipeIngredients,
             instructions: recipeInstructions,
+            meal: recipeMeal,
             calories: recipeCalories,
             mainIngredient: recipeMainIngredient,
             cookingTimeInMinutes: recipeCookingTime,
@@ -74,6 +87,9 @@ const CreateRecipe = () => {
         }
 
         await RecipesService.createNewRecipe(newRecipe)
+
+        navigate('/')
+
     }
 
 
@@ -91,11 +107,13 @@ return (
 
             <Box sx={{ display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center', mt:4, width:{xs:'40vw', sm:'25vw', md:'20vw', xl:'10vw'}}}> 
           
-            <TextField id="outlined-basic" label="Name" fullWidth required variant="outlined" size="small" onChange={handleNameOnChange} />
+            <TextField variant="outlined" label="Name" fullWidth required size="small" onChange={handleNameOnChange} />
 
             <TextField variant="outlined" label="Ingredients" fullWidth required multiline size="small" margin="normal" onChange={handleIngredientsOnChange}  />
 
             <TextField variant="outlined" label="Instructions" fullWidth required multiline size="small" margin="normal"onChange={handleInstructionsOnChange} />
+
+            <TextField variant="outlined" label="Meal" fullWidth required size="small" margin="normal" onChange={handleMealOnChange} />
             
             <TextField variant="outlined" label="Calories" fullWidth size="small" margin="normal" onChange={handleCaloriesOnChange} />
 
@@ -110,7 +128,7 @@ return (
             <TextField variant="outlined" label="Fat" fullWidth size="small" margin="normal" onChange={handleFatOnChange}  />
             </Box>
 
-            <Button sx={{mt:2}} disabled={!recipeName || !recipeIngredients || !recipeInstructions} variant="outlined" onClick={submitNewRecipe}>Submit</Button>
+            <Button sx={{mt:2}} disabled={!recipeName || !recipeIngredients || !recipeInstructions || !recipeMeal} variant="outlined" onClick={submitNewRecipe}>Submit</Button>
         </Box>
 
   
