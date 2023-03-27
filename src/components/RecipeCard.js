@@ -28,14 +28,14 @@ const RecipeCard = ({ recipe }) => {
 
                 
 
-                    <Typography variant="h6" sx={{ fontWeight: 'bold', mt: 1, ml:2 }}>
+                    <Typography variant="h6" sx={{fontSize:'1.1em', fontWeight: 'bold', mt: 1, ml:2 }}>
                         {recipe.name}
                     </Typography>
                     
                     <Box sx={{display:'flex', ml:2, mb:1}}>
                         <RestoreIcon />
-                        <Typography sx={{ml:1}}>{recipe.cookingTimeInMinutes}min</Typography>
-                        <Typography sx={{ml:1}}>{recipe.meal}</Typography>
+                        <Typography sx={{ml:1, fontSize: '0.9em'}}>{recipe.cookingTimeInMinutes}min</Typography>
+                        <Typography sx={{ml:1, fontSize: '0.9em'}}>{recipe.meal}</Typography>
                     </Box>
 
                 </Card>
