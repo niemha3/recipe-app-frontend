@@ -48,14 +48,14 @@ const Recipe = () => {
                     
                    
 
-                    <Grid item xs={12} sx={{display: {xs:'block', md:'none'}, my:8}}>
+                    <Grid item xs={12} sx={{display: {xs:'block', md:'none'}, my:8, width:'100%'}}>
                         {showIngredients ?
                     <RecipeIngredients ingredients={recipe.ingredients} />
                     : <RecipeInstruction instructions={recipe.instructions} />
                         }
                          </Grid> 
                         
-                        <Grid container sx={{display:'flex', flexDirection:'row', justifyContent:'center', alignItems:'start', backgroundColor:'#FAF8FF', my:4, py:4, gap:5 }}> 
+                        <Grid container sx={{display:{xs:'none', md:'flex', lg:'flex'}, flexDirection:'row', justifyContent:'center', alignItems:'start', backgroundColor:'#FAF8FF', my:4, py:4, gap:5 }}> 
                             <Grid item lg={6} sx={{display: {xs:'none', md:'flex', lg:'flex'}}}>
                                 <RecipeIngredients ingredients={recipe.ingredients} />
                             </Grid>
