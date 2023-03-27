@@ -25,8 +25,10 @@ const Navbar = () => {
     }
 
     return (
-        <AppBar position="static" sx={{
+        <AppBar position="sticky" sx={{
             backgroundColor: "white"
+        
+            
         }}>
             <Container maxWidth="xl" sx={NavbarStyles.container}>
                 <Toolbar disableGutters>
