@@ -2,7 +2,7 @@ import { Paper, Grid, Typography, Divider } from '@mui/material'
 
 const RecipeInstruction = ( {instructions} ) => (
 
-        <Grid container sx={{display:'flex', flexDirection:'column', width:'100%'}}>
+        <Grid container sx={{display:'flex', flexDirection:'column', width:'100%', backgroundColor:'#FAF8FF', p:2}}>
             <Typography variant="h5" sx={{fontWeight:'bold', mb:1}}>Instructions</Typography>
      
                 {instructions.map(instruction => (
