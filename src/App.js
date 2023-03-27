@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import Home from './views/Home'
 import Recipe from './views/Recipe'
 import CreateRecipe from './views/CreateRecipe'
+import CssBaseline from '@mui/material/CssBaseline'
 // import Breakfast from './views/Breakfast'
 // import Lunch from './views/Lunch'
 // import Dinner from './views/Dinner'
@@ -16,6 +17,7 @@ const App = () => {
 
   return (
     <div>
+      <CssBaseline />
       <Navbar />
       <BrowserRouter>
         <Routes>
