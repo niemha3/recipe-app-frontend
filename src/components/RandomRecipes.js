@@ -4,8 +4,8 @@ import RecipeCard from '../components/RecipeCard'
 const RandomRecipes = ({ randomRecipes }) => {
 
     return (
-        <Box sx={{ my: 3, px: { xs: 3, md:20, xl:35}, backgroundColor: '#FAF8FF' }}>
-        <Typography variant="h5" sx={{fontWeight:'bold', ml: {xs:3, md:3}}}> Have you tried these?</Typography>
+        <Box sx={{ mb: 3, px: { xs: 3, md:20, xl:35}, py:3, backgroundColor: '#FAF8FF' }}>
+        <Typography variant="h5" sx={{fontWeight:'bold', ml: {xs:3, md:3} }}> Have you tried these?</Typography>
 
         {randomRecipes &&
        <> 

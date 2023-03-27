@@ -7,8 +7,6 @@ import Typography from '@mui/material/Typography'
 import RestoreIcon from '@mui/icons-material/Restore';
 
 
-
-
 const RecipeCard = ({ recipe }) => {
 
     const navigate = useNavigate()
@@ -20,10 +18,11 @@ const RecipeCard = ({ recipe }) => {
                     <CardMedia
                         component="img"
                         height="auto"
-                        image="./chicken_pasta.png"
-                        alt="Chicken pasta dish"
+                        image={`https://drive.google.com/uc?export=view&id=${recipe.imageUrlId}`}
+                        alt={`${recipe.name}`}
 
                     >
+                    
                     </CardMedia>
 
                 

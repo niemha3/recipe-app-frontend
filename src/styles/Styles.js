@@ -6,7 +6,8 @@ const NavbarStyles = {
 
     boxForHamburgerMenu: {
         flexGrow: 1,
-        display: { xs: 'flex', md: 'none' }
+        display: { xs: 'flex', md: 'none' },
+       
     },
 
     hamburgerMenu: {
@@ -26,13 +27,19 @@ const NavbarStyles = {
     boxForDesktopMenu: {
         ml: { md: 9, lg: 30 },
         flexGrow: 1,
-        display: { xs: 'none', md: 'flex' }
+        gap:3,
+        display: { xs: 'none', md: 'flex' },
+        justifyContent:'center',
+       
+        
     },
 
     desktopMenuLinks: {
         my: 2,
         color: 'black',
-        display: 'block'
+        display: 'block',
+        textDecoration:'none',
+        fontSize: '1.2em'
     },
 
     loginButton: {
