@@ -1,10 +1,10 @@
-import { Grid, Typography, Paper} from '@mui/material'
+import { Grid, Typography, Box} from '@mui/material'
 import RecipeCard from '../components/RecipeCard'
 
 const RandomRecipes = ({ randomRecipes }) => {
 
     return (
-        <Paper sx={{ my: 3, px: { xs: 3, md:20, xl:35}, backgroundColor: '#FAF8FF' }}>
+        <Box sx={{ my: 3, px: { xs: 3, md:20, xl:35}, backgroundColor: '#FAF8FF' }}>
         <Typography variant="h5" sx={{fontWeight:'bold', ml: {xs:3, md:3}}}> Have you tried these?</Typography>
 
         {randomRecipes &&
@@ -37,7 +37,7 @@ const RandomRecipes = ({ randomRecipes }) => {
         </Grid>    
         </>
             }
-            </Paper>
+            </Box>
       
     )
 }

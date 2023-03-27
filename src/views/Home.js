@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react'
-import { Paper, Typography, Grid } from '@mui/material'
+import { Paper, Typography, Grid, Box } from '@mui/material'
 import RecipeCard from '../components/RecipeCard'
 import recipesService from '../services/recipes'
 import Searchbar from '../components/Searchbar'
@@ -48,7 +48,7 @@ const Home = () => {
             <RandomRecipes randomRecipes={randomRecipes}  />
             <RecipesByMeal lunchRecipes={lunchRecipes} />
             
-            <Paper sx={{ my: 3, px: { xs: 3, md:'20', xl:35}, backgroundColor: '#FAF8FF' }}>
+            <Box sx={{ my: 3, px: { xs: 3, md:'20', xl:35}, backgroundColor: '#FAF8FF', width:'100%' }}>
                 <Typography variant="h5" sx={{fontWeight:'bold', ml: {xs: 0, md:3}, textAlign: { xs:'center', md: 'start'} }}>
                     Popular Recipes
                 </Typography>
@@ -63,7 +63,7 @@ const Home = () => {
                     </Grid>
                 }
                 
-                </Paper>
+                </Box>
          
         </>
     )
