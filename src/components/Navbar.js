@@ -10,9 +10,15 @@ import MenuIcon from '@mui/icons-material/Menu'
 import Container from '@mui/material/Container'
 import Button from '@mui/material/Button'
 import MenuItem from '@mui/material/MenuItem'
+import Link from '@mui/material/Link'
+import SearchIcon from '@mui/icons-material/Search'
+
+
 
 const Navbar = () => {
-    const pages = ['Breakfast', 'Lunch', 'Dinner', 'Snack', 'Create new recipe']
+    const pages = ['Breakfast', 'Lunch', 'Dinner', 'Snack', 'Create new recipe', 'Login']
+
+   
 
     const [anchorElNav, setAnchorElNav] = useState(null)
 
@@ -32,15 +38,12 @@ const Navbar = () => {
         }}>
             <Container maxWidth="xl" sx={NavbarStyles.container}>
                 <Toolbar disableGutters>
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        components="a"
-                        href="/"
-                        sx={NavbarStyles.logoText}
-                    >
-                        LetsGetCooking
-                    </Typography>
+                <Box
+                    component="img"
+                    sx={{maxWidth: '100%', height: 100, ml:1, display: {xs:'none', md:'block'}}}
+                    alt="Logo"
+                    src="./logo_transparent_ver2.png"
+                    /> 
 
                     <Box sx={NavbarStyles.boxForHamburgerMenu}>
                         <IconButton
@@ -73,27 +76,17 @@ const Navbar = () => {
                             ))}
                         </Menu>
                     </Box>
+                    <Box
+                    component="img"
+                    sx={{maxWidth: '100%', height: 100, display: {xs:'block', md:'none'}}}
+                    alt="Logo"
+                    src="./logo_short_transparent.png"
+                    />
                     <Box sx={NavbarStyles.boxForDesktopMenu}>
-                        {pages.map((page) => (
-                            <Button
-                                key={page}
-                                onClick={handleCloseNavMenu}
-                                sx={NavbarStyles.desktopMenuLinks}
-                            >
-                                {page}
-                            </Button>
-                        ))}
-                    </Box>
-
-                    <Box sx={{ flexGrow: 0 }}>
-                        <Typography
-                            noWrap
-                            component="a"
-                            href=""
-                            sx={NavbarStyles.loginButton}
-                        >
-                            Login
-                        </Typography>
+                        <Link sx={NavbarStyles.desktopMenuLinks} href="/">Recipes</Link>
+                        <Link sx={NavbarStyles.desktopMenuLinks} href="/search"> Search</Link>
+                        <Link sx={NavbarStyles.desktopMenuLinks} href="/recipes/create">New Recipe</Link>
+                        <Link sx={NavbarStyles.desktopMenuLinks} href="/login">Login</Link>
                     </Box>
                 </Toolbar>
             </Container>
