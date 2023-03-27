@@ -15,6 +15,7 @@ const CreateRecipe = () => {
     const [recipeProtein, setRecipeProtein] = useState('')
     const [recipeCarbohydrates, setRecipeCarbohydrates] = useState('')
     const [recipeFat, setRecipeFat] = useState('')
+    const [recipeImageUrl, setRecipeImageUrl] = useState('')
 
     const navigate = useNavigate()
 
@@ -71,6 +72,15 @@ const CreateRecipe = () => {
         
     }
 
+    const handleImageUrlOnChange = (event) => {
+        const url = event.target.value
+
+        const urlId = url.slice(32, 65)
+
+        setRecipeImageUrl(urlId)
+    }
+
+
     const submitNewRecipe = async () => {
         
         const newRecipe = {
@@ -83,7 +93,8 @@ const CreateRecipe = () => {
             cookingTimeInMinutes: recipeCookingTime,
             protein: recipeProtein,
             carbohydrates: recipeCarbohydrates,
-            fat: recipeFat
+            fat: recipeFat,
+            imageUrlId: recipeImageUrl
         }
 
         await RecipesService.createNewRecipe(newRecipe)
@@ -114,6 +125,8 @@ return (
             <TextField variant="outlined" label="Instructions" fullWidth required multiline size="small" margin="normal"onChange={handleInstructionsOnChange} />
 
             <TextField variant="outlined" label="Meal" fullWidth required size="small" margin="normal" onChange={handleMealOnChange} />
+
+            <TextField variant="outlined" label="Google Drive link for image" fullWidth required size="small" margin="normal" onChange={handleImageUrlOnChange}  />
             
             <TextField variant="outlined" label="Calories" fullWidth size="small" margin="normal" onChange={handleCaloriesOnChange} />
 
@@ -126,6 +139,8 @@ return (
             <TextField variant="outlined" label="Carbohydrates" fullWidth size="small" margin="normal" onChange={handleCarbohydratesOnChange}  />
 
             <TextField variant="outlined" label="Fat" fullWidth size="small" margin="normal" onChange={handleFatOnChange}  />
+
+
             </Box>
 
             <Button sx={{mt:2}} disabled={!recipeName || !recipeIngredients || !recipeInstructions || !recipeMeal} variant="outlined" onClick={submitNewRecipe}>Submit</Button>
