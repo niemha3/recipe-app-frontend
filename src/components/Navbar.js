@@ -68,20 +68,28 @@ const Navbar = () => {
                             onClose={handleCloseNavMenu}
                             sx={NavbarStyles.hamburgerMenu}
                         >
-                            {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">
-                                        {page}
-                                    </Typography>
-                                </MenuItem>
-                            ))}
+                            <MenuItem > 
+                                <Link sx={NavbarStyles.hamburgerMenuLinks} href="/">Recipes</Link>
+                            </MenuItem>
+
+                            <MenuItem>
+                                <Link sx={NavbarStyles.hamburgerMenuLinks} href="/search"> Search</Link>
+                            </MenuItem>
+
+                            <MenuItem> 
+                                <Link sx={NavbarStyles.hamburgerMenuLinks} href="/recipes/create">New Recipe</Link>
+                             </MenuItem>
+
+                            <MenuItem> 
+                                <Link sx={NavbarStyles.hamburgerMenuLinks} href="/login">Login</Link>
+                            </MenuItem>
                         </Menu>
                     </Box>
                     <Box
                     component="img"
-                    sx={{maxWidth: '100%', height: 100, display: {xs:'block', md:'none'}}}
+                    sx={{maxWidth: '100%', height: 100, display: {xs:'block', md:'none'}, mr:1}}
                     alt="Logo"
-                    src="/logo_short_transparent.png"
+                    src="/logo_short_transparent_ver2.png"
                     href="/"
                     />
                     <Box sx={NavbarStyles.boxForDesktopMenu}>
