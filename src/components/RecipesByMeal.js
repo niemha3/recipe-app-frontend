@@ -2,9 +2,7 @@ import RecipeCard from '../components/RecipeCard'
 import { Grid, Typography } from '@mui/material'
 
 // TODO: Refactor to have any meal as a prop
-const RecipesByMeal = ({ lunchRecipes }) => {
-    console.log(lunchRecipes)
-    return (
+const RecipesByMeal = ({ lunchRecipes }) =>  (
         <> 
         <Typography variant="h5" sx={{fontWeight: 'bold', ml: {xs:3, md:3}}}>Looking for lunch?</Typography>
         {lunchRecipes &&
@@ -17,8 +15,7 @@ const RecipesByMeal = ({ lunchRecipes }) => {
             </Grid>
         }
         </>
-            
     )
-}
+
 
 export default RecipesByMeal

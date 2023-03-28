@@ -15,7 +15,6 @@ const Home = () => {
     const [randomRecipes, setRandomRecipes] = useState(null)
     const [lunchRecipes, setLunchRecipes] = useState(null)
 
-
     useEffect(() => {
         const doActions = async () => {
             const response = await recipesService.getRecipes()
@@ -30,16 +29,10 @@ const Home = () => {
 
             setLunchRecipes(shuffledLunch.slice(0,4))
 
-
         }
         doActions()
 
     }, [])
-
-    console.log(lunchRecipes)
-  
-
-    
 
     return (
         <> 
