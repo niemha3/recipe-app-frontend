@@ -42,6 +42,14 @@ const NavbarStyles = {
         fontSize: '1.2em'
     },
 
+    hamburgerMenuLinks: {
+        color: 'black',
+        display: 'block',
+        textDecoration:'none',
+        fontSize: '1.2em'
+    },
+
+
     loginButton: {
         fontSize: { xs: 15, sm: 20, },
         flexGrow: 0,
