@@ -11,7 +11,7 @@ const RandomRecipes = ({ randomRecipes }) => {
        <> 
         <Grid container sx={{display:'flex', flexDirection:{xs:'column', sm:'row'}, alignItems:'center'}}>
             <Grid item xs={12} sm={12} lg={6} > 
-                <RecipeCard recipe={randomRecipes[0]} />
+                <RecipeCard recipe={randomRecipes[0]} largeCardHeight={400} />
             </Grid>
        
 
