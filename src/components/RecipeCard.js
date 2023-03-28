@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography'
 import RestoreIcon from '@mui/icons-material/Restore';
 
 
-const RecipeCard = ({ recipe }) => {
+const RecipeCard = ({ recipe, largeCardHeight }) => {
 
     const navigate = useNavigate()
     
@@ -17,7 +17,7 @@ const RecipeCard = ({ recipe }) => {
                 <Card sx={{m:2, borderRadius:'15px', maxWidth: '100%', height:'auto', display: 'flex', flexDirection: 'column', ':hover': { transform:'scale(1.1)', boxShadow: 20, borderColor: 'neutral.outlinedHoverBorder', cursor:'pointer'}} } onClick={() => navigate(`/recipes/${recipe.id}`)}>
                     <CardMedia
                         component="img"
-                        height="auto"
+                        sx={{height: largeCardHeight ? {xs:'184px', sm:'360px', md:'400px', xl: '600px'} : {xs: '184px', lg:'200px', xl:'300px' }}}
                         image={`https://drive.google.com/uc?export=view&id=${recipe.imageUrlId}`}
                         alt={`${recipe.name}`}
 
