@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom"
 import Card from '@mui/material/Card'
-import Grid from '@mui/material/Grid'
 import Box from '@mui/material/Box'
 import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
@@ -17,15 +16,12 @@ const RecipeCard = ({ recipe, largeCardHeight }) => {
                 <Card sx={{m:2, borderRadius:'15px', maxWidth: '100%', height:'auto', display: 'flex', flexDirection: 'column', ':hover': { transform:'scale(1.1)', boxShadow: 20, borderColor: 'neutral.outlinedHoverBorder', cursor:'pointer'}} } onClick={() => navigate(`/recipes/${recipe.id}`)}>
                     <CardMedia
                         component="img"
-                        sx={{height: largeCardHeight ? {xs:'184px', sm:'360px', md:'400px', xl: '600px'} : {xs: '184px', lg:'200px', xl:'300px' }}}
+                        sx={{height: largeCardHeight ? {xs:'184px', sm:'360px', md:'400px', xl: '600px'} : {xs: '184px', lg:'200px', xl:'250px'}}}
                         image={`https://drive.google.com/uc?export=view&id=${recipe.imageUrlId}`}
                         alt={`${recipe.name}`}
 
                     >
-                    
                     </CardMedia>
-
-                
 
                     <Typography variant="h6" sx={{fontSize:'1.1em', fontWeight: 'bold', mt: 1, ml:2 }}>
                         {recipe.name}
