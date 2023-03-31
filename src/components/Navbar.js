@@ -94,7 +94,7 @@ const Navbar = () => {
                     />
                     <Box sx={NavbarStyles.boxForDesktopMenu}>
                         <Link sx={NavbarStyles.desktopMenuLinks} href="/">Recipes</Link>
-                        <Link sx={NavbarStyles.desktopMenuLinks} href="/search"> Search</Link>
+                        <Link sx={NavbarStyles.desktopMenuLinks} href="/recipes/search"> Search</Link>
                         <Link sx={NavbarStyles.desktopMenuLinks} href="/recipes/create">New Recipe</Link>
                         <Link sx={NavbarStyles.desktopMenuLinks} href="/login">Login</Link>
                     </Box>
