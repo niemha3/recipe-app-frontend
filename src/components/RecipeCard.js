@@ -13,7 +13,7 @@ const RecipeCard = ({ recipe, largeCardHeight }) => {
     return (
         <> 
             {recipe &&
-                <Card sx={{m:2, borderRadius:'15px', maxWidth: '100%', height:'auto', display: 'flex', flexDirection: 'column', ':hover': { transform:'scale(1.1)', boxShadow: 20, borderColor: 'neutral.outlinedHoverBorder', cursor:'pointer'}} } onClick={() => navigate(`/recipes/${recipe.id}`)}>
+                <Card sx={{m:2, borderRadius:'15px', maxWidth: '100%', height:'auto', display: 'flex', flexDirection: 'column', ':hover': { transform: {xs: 'none', lg: 'scale(1.1)'}, boxShadow: 20, borderColor: 'neutral.outlinedHoverBorder', cursor:'pointer'}} } onClick={() => navigate(`/recipes/${recipe.id}`)}>
                     <CardMedia
                         component="img"
                         sx={{height: largeCardHeight ? {xs:'184px', sm:'360px', md:'400px', xl: '600px'} : {xs: '184px', lg:'200px', xl:'250px'}}}
