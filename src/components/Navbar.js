@@ -73,7 +73,7 @@ const Navbar = () => {
                             </MenuItem>
 
                             <MenuItem>
-                                <Link sx={NavbarStyles.hamburgerMenuLinks} href="/search"> Search</Link>
+                                <Link sx={NavbarStyles.hamburgerMenuLinks} href="/recipes/search"> Search</Link>
                             </MenuItem>
 
                             <MenuItem> 

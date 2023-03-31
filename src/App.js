@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import Home from './views/Home'
 import Recipe from './views/Recipe'
 import CreateRecipe from './views/CreateRecipe'
+import Search from './views/Search'
 import CssBaseline from '@mui/material/CssBaseline'
 // import Breakfast from './views/Breakfast'
 // import Lunch from './views/Lunch'
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/recipes/:id" element={<Recipe />} />
           <Route path="/recipes/create" element={<CreateRecipe />} />
+          <Route path="/recipes/search" element={<Search />} />
           {/* <Route path="/breakfast" element={<Breakfast />} />
           <Route path="/lunch" element={<Lunch />} />
           <Route path="/dinner" element={<Dinner />} />
