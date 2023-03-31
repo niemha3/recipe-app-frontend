@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import recipesService from '../services/recipes'
-import { Box, TextField, InputBase, Paper, Button, Grid } from '@mui/material'
-import SearchIcon from '@mui/icons-material/Search'
+import { Box, Paper, Grid } from '@mui/material'
 import RecipeCard from "../components/RecipeCard"
 import Searchbar from "../components/Searchbar"
 
@@ -16,7 +15,7 @@ const Search = () => {
             const response = await recipesService.getRecipes()
             setRecipes(response)
 
-            if(searchbar.length > 1) {
+            if (searchbar.length > 1) {
             const searchedRecipes = recipes.filter((recipe) =>
             recipe.name.toLowerCase().includes(searchbar.toLowerCase()) ||
             recipe.meal.toLowerCase().includes(searchbar.toLowerCase()) ||
@@ -40,10 +39,8 @@ const Search = () => {
 
     return (
         <>
-            
             <Paper sx={{ display:'flex', flexDirection:'column', justifyContent:'center', backgroundColor:'#FAF8FF', width:'100%', height:'auto', p:9}}> 
                    <Searchbar handleSearchbarChange={handleSearchbarChange} />
-
                     <Box sx={{display:'flex', flexDirection:'row', mt:5}}> 
                         {matchingRecipes &&
                                 <Grid container sx={{display:'flex', justifyContent:'center'}}>
@@ -56,9 +53,6 @@ const Search = () => {
                             }
                     </Box>    
             </Paper>
-
-
-     
         </>
     )
 }
