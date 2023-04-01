@@ -41,7 +41,7 @@ const Home = () => {
             <RandomRecipes randomRecipes={randomRecipes}  />
             <RecipesByMeal lunchRecipes={lunchRecipes} />
             
-            <Box sx={{ my: 3, px: { xs: 3, md:'20', xl:35}, py:3, backgroundColor: '#FAF8FF', width:'100%' }}>
+            <Box sx={{ my: 3, px: { xs: 0, md:20, xl:35}, py:3, backgroundColor: '#FAF8FF', width:'100%' }}>
                 <Typography variant="h5" sx={{fontWeight:'bold', ml: {xs: 0, md:3}, textAlign: { xs:'center', md: 'start'} }}>
                     Popular Recipes
                 </Typography>
