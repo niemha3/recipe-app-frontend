@@ -1,9 +1,8 @@
 
 import React, { useState, useEffect } from 'react'
-import { Paper, Typography, Grid, Box } from '@mui/material'
+import { Typography, Grid, Box } from '@mui/material'
 import RecipeCard from '../components/RecipeCard'
 import recipesService from '../services/recipes'
-import Searchbar from '../components/Searchbar'
 import RandomRecipes from '../components/RandomRecipes'
 import RecipesByMeal from '../components/RecipesByMeal'
 
