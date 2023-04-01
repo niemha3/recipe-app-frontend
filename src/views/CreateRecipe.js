@@ -111,7 +111,7 @@ return (
     <Paper sx={{backgroundColor: '#FAF8FF', display:'flex', flexDirection:'column', justifyContent: {xs:'center'}}}>
         
 
-        <Box sx={{ alignSelf:'center', display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center', borderRadius:'10px', width:'40vw', mt:15, p:3, backgroundColor:'white'}}> 
+        <Box sx={{ alignSelf:'center', display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center', borderRadius:'10px', width:{xs:'90vw', sm:'60vw', lg:'40vw'},mb: 3, mt:{xs:5, md:15}, p:3, backgroundColor:'white'}}> 
 
         <Typography variant ="h4" sx={{fontSize: '2em', fontWeight:'bold', m:2, alignSelf: {xs: 'center', sm:'start'}}}> New recipe</Typography>
         <Typography variant="p" sx={{m:2, fontSize:'1.1em'}}>Give required recipe info to submit a new recipe</Typography>
