@@ -4,6 +4,7 @@ import Home from './views/Home'
 import Recipe from './views/Recipe'
 import CreateRecipe from './views/CreateRecipe'
 import Search from './views/Search'
+import Footer from './components/Footer'
 import CssBaseline from '@mui/material/CssBaseline'
 // import Breakfast from './views/Breakfast'
 // import Lunch from './views/Lunch'
@@ -35,6 +36,7 @@ const App = () => {
         </Routes>
 
       </BrowserRouter>
+      <Footer />
 
     </div>
   )
