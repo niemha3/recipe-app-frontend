@@ -32,8 +32,8 @@ const Recipe = () => {
     return (
         <>
             {recipe &&
-                <Grid container sx={{display:'flex', flexDirection: {xs:'column', sm:'row'}, justifyContent:'center',  alignItems:{xs:'center', sm:'start' }, pt:3, px:{lg: 35, xl:70}  }}>
-                    <Grid item xs={12} md={6} sx={{ml: {xs:0, sm:15, md:0}}}>
+                <Grid container sx={{display:'flex', flexDirection: {xs:'column', sm:'row'}, justifyContent:'center',  alignItems:{xs:'center', sm:'start' }, pt:3, px:{ md:10, lg: 35, xl:70}  }}>
+                    <Grid item xs={12} md={6} sx={{ml: {xs:0, sm:'12%', md:0}, mr:{xs:0, sm:'12%', md:0}}}>
                         <img alt={`${recipe.name}`} src={`https://drive.google.com/uc?export=view&id=${recipe.imageUrlId}`} style={{ maxWidth: '100%', height:'400px', objectFit:'cover', objectPosition:'bottom' }}  />
                     </Grid>
                 
