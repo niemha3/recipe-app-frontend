@@ -41,6 +41,14 @@ const Navbar = () => {
                     href="/"
                     /> 
 
+                    <Box
+                    component="img"
+                    sx={{maxWidth: '100%', height: 100, display: {xs:'block', md:'none'}, mr:1}}
+                    alt="Logo"
+                    src="/logo_short_transparent_ver2.png"
+                    href="/"
+                    />
+
                     <Box sx={NavbarStyles.boxForHamburgerMenu}>
                         <IconButton
                             size="large"
@@ -80,13 +88,7 @@ const Navbar = () => {
                             </MenuItem>
                         </Menu>
                     </Box>
-                    <Box
-                    component="img"
-                    sx={{maxWidth: '100%', height: 100, display: {xs:'block', md:'none'}, mr:1}}
-                    alt="Logo"
-                    src="/logo_short_transparent_ver2.png"
-                    href="/"
-                    />
+                 
                     <Box sx={NavbarStyles.boxForDesktopMenu}>
                         <Link sx={NavbarStyles.desktopMenuLinks} href="/">Recipes</Link>
                         <Link sx={NavbarStyles.desktopMenuLinks} href="/recipes/search"> Search</Link>
