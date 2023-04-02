@@ -7,7 +7,7 @@ const NavbarStyles = {
     boxForHamburgerMenu: {
         flexGrow: 1,
         display: { xs: 'flex', md: 'none' },
-       
+        justifyContent:'end'
     },
 
     hamburgerMenu: {
