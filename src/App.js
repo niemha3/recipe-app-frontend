@@ -4,20 +4,20 @@ import Home from './views/Home'
 import Recipe from './views/Recipe'
 import CreateRecipe from './views/CreateRecipe'
 import Search from './views/Search'
+import { createTheme, ThemeProvider } from '@mui/material'
 import CssBaseline from '@mui/material/CssBaseline'
-// import Breakfast from './views/Breakfast'
-// import Lunch from './views/Lunch'
-// import Dinner from './views/Dinner'
-// import Snack from './views/Snack'
-// import Dessert from './views/Dessert'
-// import Login from './views/Login'
-
 
 const App = () => {
 
+const theme = createTheme({
+    typography: {
+      fontFamily:['Oswald, Roboto, Helvetica Neue']
+    }
+})
 
   return (
     <div>
+      <ThemeProvider theme={theme}> 
       <CssBaseline />
       <Navbar />
       <BrowserRouter>
@@ -26,15 +26,10 @@ const App = () => {
           <Route path="/recipes/:id" element={<Recipe />} />
           <Route path="/recipes/create" element={<CreateRecipe />} />
           <Route path="/recipes/search" element={<Search />} />
-          {/* <Route path="/breakfast" element={<Breakfast />} />
-          <Route path="/lunch" element={<Lunch />} />
-          <Route path="/dinner" element={<Dinner />} />
-          <Route path="/snack" element={<Snack />} />
-          <Route path="/dessert" element={<Dessert />} />
-          <Route path="/login" element={<Login />} /> */}
         </Routes>
 
       </BrowserRouter>
+      </ThemeProvider>
 
     </div>
   )
