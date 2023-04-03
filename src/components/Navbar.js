@@ -33,21 +33,18 @@ const Navbar = () => {
         }}>
             <Container maxWidth="xl" sx={NavbarStyles.container}>
                 <Toolbar disableGutters>
-                <Box
-                    component="img"
-                    sx={{maxWidth: '100%', height: 100, ml:1, display: {xs:'none', md:'block'}}}
-                    alt="Logo"
-                    src="/logo_transparent_ver2.png"
-                    href="/"
-                    /> 
+                    
+                    <Box sx={{ ml:1, display: {xs:'none', md:'block'}}}>
+                        <Link href="/"> 
+                            <img src="/logo_transparent_ver2.png" alt="logo" href="/" style={{maxWidth:'100%', height:100}}/>
+                        </Link>
+                    </Box>
 
-                    <Box
-                    component="img"
-                    sx={{maxWidth: '100%', height: 100, display: {xs:'block', md:'none'}, mr:1}}
-                    alt="Logo"
-                    src="/logo_short_transparent_ver2.png"
-                    href="/"
-                    />
+                    <Box sx={{ ml:1, display: {xs:'block', md:'none'}}}>
+                        <Link href="/"> 
+                            <img src="/logo_short_transparent_ver2.png" alt="logo" href="/" style={{maxWidth: '100%', height: 100}} />
+                        </Link>
+                    </Box>
 
                     <Box sx={NavbarStyles.boxForHamburgerMenu}>
                         <IconButton
