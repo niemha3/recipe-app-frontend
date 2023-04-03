@@ -39,9 +39,9 @@ const Search = () => {
 
     return (
         <>
-            <Paper sx={{ display:'flex', flexDirection:'column', justifyContent:'center', backgroundColor:'#FAF8FF', width:'100%', height:'auto', p:9}}> 
+            <Paper sx={{ display:'flex', flexDirection:'column', justifyContent:'center', backgroundColor:'#FAF8FF', width:'100%', height:'auto', py:9 }}> 
                    <Searchbar handleSearchbarChange={handleSearchbarChange} />
-                    <Box sx={{display:'flex', flexDirection:'row', mt:5}}> 
+                    <Box sx={{display:'flex', flexDirection:'row', mt:5, minHeight:'50vh'}}> 
                         {matchingRecipes &&
                                 <Grid container sx={{display:'flex', justifyContent:'center'}}>
                                     {matchingRecipes.map((recipe) => (
