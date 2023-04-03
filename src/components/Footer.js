@@ -8,7 +8,7 @@ const Footer = () => (
 
   
 
-<div style={{position:'absolute', bottom:0, width:'100%', textAlign:'center'}}> 
+<Box style={{mt:'auto', width:'100%', textAlign:'center'}}> 
 
         <Typography sx={{textAlign:'center', fontSize:'0.7em'}}>© Harri Nieminen 2023</Typography>
         <Box container sx={{display:'flex', justifyContent:'center', flexDirection:'row'}}>
@@ -26,7 +26,7 @@ const Footer = () => (
      
        
     </Box>
-    </div>
+    </Box>
 )
 
 export default Footer

@@ -18,7 +18,7 @@ const App = () => {
 
 
   return (
-    <div>
+    <>
       <CssBaseline />
       <Navbar />
       <BrowserRouter>
@@ -38,7 +38,7 @@ const App = () => {
       </BrowserRouter>
       <Footer />
 
-    </div>
+    </>
   )
 }
 
