@@ -8,7 +8,7 @@ const Footer = () => (
 
   
 
-<Box style={{mt:'auto', width:'100%', textAlign:'center'}}> 
+<Box style={{position:'relative', width:'100%', textAlign:'center'}}> 
 
         <Typography sx={{textAlign:'center', fontSize:'0.7em'}}>© Harri Nieminen 2023</Typography>
         <Box container sx={{display:'flex', justifyContent:'center', flexDirection:'row'}}>

@@ -11,13 +11,23 @@ import CssBaseline from '@mui/material/CssBaseline'
 const App = () => {
 
 const theme = createTheme({
-    typography: {
-      fontFamily:['Oswald, Roboto, Helvetica Neue']
+    // components: {
+    //   MuiCssBaseline: {
+    //     styleOverrides: {
+    //       '#root': {
+    //         minHeight: '100vh'
+    //       }}
+    //     }
+    //   },
+      typography: {
+        fontFamily:['Oswald, Roboto, Helvetica Neue']
     }
-})
+    })
+
+
 
   return (
-    <>
+    <div>
       <ThemeProvider theme={theme}> 
       <CssBaseline />
       <Navbar />
@@ -28,10 +38,11 @@ const theme = createTheme({
           <Route path="/recipes/create" element={<CreateRecipe />} />
           <Route path="/recipes/search" element={<Search />} />
         </Routes>
-
+      <Footer />
       </BrowserRouter>
+      </ThemeProvider>
 
-    </>
+    </div>
   )
 }
 
