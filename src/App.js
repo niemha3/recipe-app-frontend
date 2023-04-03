@@ -4,6 +4,7 @@ import Home from './views/Home'
 import Recipe from './views/Recipe'
 import CreateRecipe from './views/CreateRecipe'
 import Search from './views/Search'
+import Login from "./views/Login"
 import { createTheme, ThemeProvider } from '@mui/material'
 import CssBaseline from '@mui/material/CssBaseline'
 
@@ -26,6 +27,7 @@ const theme = createTheme({
           <Route path="/recipes/:id" element={<Recipe />} />
           <Route path="/recipes/create" element={<CreateRecipe />} />
           <Route path="/recipes/search" element={<Search />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
 
       </BrowserRouter>
