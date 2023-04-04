@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Navbar from './components/Navbar'
 import Home from './views/Home'
@@ -8,8 +9,18 @@ import Login from "./views/Login"
 import { createTheme, ThemeProvider } from '@mui/material'
 import CssBaseline from '@mui/material/CssBaseline'
 
+
 const App = () => {
 
+  const [user, setUser] = useState(null)
+
+
+  const handleSetUser = (loggedUser) => {
+      setUser(loggedUser)
+  }
+
+
+console.log('This comes from app.js', user)
 const theme = createTheme({
     typography: {
       fontFamily:['Oswald, Roboto, Helvetica Neue']
@@ -27,7 +38,7 @@ const theme = createTheme({
           <Route path="/recipes/:id" element={<Recipe />} />
           <Route path="/recipes/create" element={<CreateRecipe />} />
           <Route path="/recipes/search" element={<Search />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login handleSetUser={handleSetUser} />} />
         </Routes>
 
       </BrowserRouter>
